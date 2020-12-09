@@ -7,8 +7,11 @@
 As a company we would like to have a way of mailing each other internally. Its a known fact that GMail, YahooMail and Hotmail have arent secure. We would also like to make this a SPA(Single Page App).
 
 ## Installation
+
 1. Fork and clone the repository
 1. run `pipenv shell && pipenv install` to install all dependencies and set up virtual environment
+1. run `pipenv run python manage.py makemigrations`
+1. run `pipenv run python manage.py migrate`
 
 ## Deliverables
 
@@ -17,11 +20,10 @@ As a company we would like to have a way of mailing each other internally. Its a
 1. User Should be able to view mails in inbox without reloading the page. Real time changes arent needed.
 1. User should be able to view sent items and archive mails.
 
-
-
-
 ## Helper code.
+
 You can setup your serializers either with `django-restframework` by creating a `serializer.py` and adding the following code to it.
+
 ```python
 class MailSerializer(serializers.ModelSerializer):
     class Meta:
@@ -30,6 +32,7 @@ class MailSerializer(serializers.ModelSerializer):
 ```
 
 You can also write your own serializer as so:
+
 ```python
 #models.py
 class Mail(models.Model):
@@ -45,18 +48,18 @@ class Mail(models.Model):
             "subject" : self.subject,
             "recipients": [user.email for user in self.recipients.all()]
         }
-        
-        
+
+
   #views.py
   from django.views.decorators.csrf import csrf_exempt
-  
+
   @csrf_exempt
   def mails_api(request, id):
       try:
         mail = Mail.objects.get(pk=id)
-        
+
         return JsonResponse(mail.serialize(), status=200)
       except Mail.DoesNotExist:
         return JsonResponse({"message" : "Data not found"}, status=400)
-        
+
 ```
