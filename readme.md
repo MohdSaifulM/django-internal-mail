@@ -4,14 +4,22 @@
 
 <img src="https://i.pinimg.com/originals/56/c4/19/56c419f5a0989103beb622c8d794fffc.jpg" width="400" />
 
-As a company we would like to have a way of mailing each other internally. Its a known fact that GMail, YahooMail and Hotmail have arent secure. We would also like to make this a SPA(Single Page App).
+As a company we would like to have a way of sending secure mails to employees internally. Its a known fact that GMail, YahooMail and Hotmail have aren't secure thus we are contracting our profound developer team to handle this project. Just to let you know we had to let go of our random angmoh Chris to hire Jeff. Jeff feels we should make this a SPA(Single Page App) and has suggested making it with Django and using JavaScript to display the data to the HTML.
 
 ## Installation
 
 1. Fork and clone the repository
+
+### Pipenv installation
 1. run `pipenv shell && pipenv install` to install all dependencies and set up virtual environment
 1. run `pipenv run python manage.py makemigrations`
 1. run `pipenv run python manage.py migrate`
+
+### Pip installation
+1. run `pip install -r requirement.txt` to install all dependencies
+1. run `python manage.py makemigrations`
+1. run `python manage.py migrate`
+1. if you decide to use this way be sure to run `pip freeze > requirement.txt` after every new installation
 
 ## Deliverables
 
@@ -23,11 +31,12 @@ As a company we would like to have a way of mailing each other internally. Its a
 ## Screenshots Of possible design
 <img src="https://www.getmailbird.com/wp-content/uploads/2020/08/Alternative-to-Mailbox-email-client.png" width="500" />
 
-## Helper code.
+## Helper Code.
+
+You can setup your serializers either with `django-restframework` by creating a `serializer.py` or writing custom serializers with your model.
 
 <details><summary>With Django Rest Framework</summary>
 <p>
-You can setup your serializers either with `django-restframework` by creating a `serializer.py` and adding the following code to it.
 
 ```python
 #serializers.py
@@ -64,7 +73,7 @@ class MailSerializer(serializers.ModelSerializer):
 </details>
 
 ## Custom Serializer
-Sometimes it is more beneficial to write your own serializers to handle apis.
+Sometimes it is more beneficial to write your own serializers to handle api requests.
 
 <details><summary>Custom Serializers with Model</summary>
 <p>
