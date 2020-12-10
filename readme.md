@@ -15,6 +15,8 @@ As a company we would like to have a way of sending secure mails to employees in
 1. run `pipenv run python manage.py makemigrations`
 1. run `pipenv run python manage.py migrate`
 
+or with just
+
 ### Pip installation
 1. run `pip install -r requirement.txt` to install all dependencies
 1. run `python manage.py makemigrations`
