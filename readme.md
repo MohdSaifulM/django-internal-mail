@@ -59,8 +59,6 @@ class MailSerializer(serializers.ModelSerializer):
  def mails_api(request, id):
       try:
         mail = Mail.objects.get(pk=id)
-
-        return JsonResponse(mail.serialize(), status=200)
       except Mail.DoesNotExist:
         return JsonResponse({"message" : "Data not found"}, status=400)
       
