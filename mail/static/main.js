@@ -1,1 +1,4 @@
-console.log("happy coding folks")
+document.addEventListener("DOMContentLoaded", function () {
+  //codes
+  console.log("happy coding folks")
+})
