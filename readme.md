@@ -4,7 +4,7 @@
 
 <img src="https://i.pinimg.com/originals/56/c4/19/56c419f5a0989103beb622c8d794fffc.jpg" width="400" />
 
-As a company we would like to have a way of sending secure mails to employees internally. Its a known fact that GMail, YahooMail and Hotmail aren't secure thus we are contracting our profound developer team to handle this project. Just to let you know we had to let go of our random angmoh Chris to hire Jeff. Jeff feels we should make this a SPA(Single Page App) and has suggested making it with Django and using JavaScript to display the data to the HTML.
+As a company we would like to have a way of sending secure mails to employees internally. Its a known fact that GMail, YahooMail and Hotmail aren't secure thus we are contracting our profound development team to handle this project. Just to let you know we had to let go of our random angmoh Chris to hire Jeff. Jeff feels we should make this a SPA(Single Page App) and has suggested making it with Django and using JavaScript to display the data to the HTML.
 
 The app have already been setup for you. There are two apps in this django project, one for user `accounts` and the other for `mail`. You so you might what to have a look at all files and folders already setup to get familiar with the codes. The mail app consists of a javascript and css file and this is where most of your frontend code will go and a views.py where all your backend coding will reside.
 
